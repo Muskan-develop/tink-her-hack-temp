@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Classroom Companion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🎓 AI Classroom Companion</h1>
+
+<input type="text" id="title" placeholder="Lecture Title">
+
+<br><br>
+
+<button onclick="startRecording()">Start Recording</button>
+<button onclick="stopRecording()">Stop Recording</button>
+<button onclick="generateSummary()">Generate Summary</button>
+<button onclick="saveSession()">Save Session</button>
+<button onclick="downloadNotes()">Download Notes</button>
+
+<p>
+  <span class="highlight">Exam Relevant</span>
+  &nbsp;&nbsp;
+  <span class="interaction">Interaction Moment</span>
+</p>
+
+<h3>🧠 Real-Time Smart Transcript</h3>
+<div id="transcript"></div>
+
+<h3>✏️ Ask Your Doubt</h3>
+<textarea id="doubtInput" placeholder="Type your doubt here..." rows="3"></textarea>
+<br>
+<button onclick="submitDoubt()">Submit Doubt</button>
+
+<h3>📝 AI Generated Summary</h3>
+<div id="summary"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

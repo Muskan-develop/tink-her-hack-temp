@@ -1,0 +1,15 @@
+<h2>📩 Teacher Dashboard - Student Doubts</h2>
+<ul id="doubtList"></ul>
+
+<script>
+fetch("/get-doubts")
+  .then(res => res.json())
+  .then(data => {
+    const list = document.getElementById("doubtList");
+    data.forEach(d => {
+      const li = document.createElement("li");
+      li.textContent = d.doubt;
+      list.appendChild(li);
+    });
+  });
+</script>
