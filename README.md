@@ -2,40 +2,69 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# [AI Classroom Companion] 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: [SheCodes]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: [Muskan] - [Jain University Kochi]
+- Member 2: [Neeraja N R] - [Jain University Kochi]
 
 ### Hosted Project Link
-[mention your project hosted link here]
+[https://tink-her-hack-temp-f3fj.onrender.com]
 
 ### Project Description
-[2-3 lines about what your project does]
+[AI Classroom Companion is a real-time intelligent learning assistant designed for deaf students.
+It transforms classroom speech into structured learning intelligence by detecting exam-relevant statements, interaction moments, generating summaries, and enabling doubt submission.
+
+Unlike basic transcription tools, it adds contextual understanding to lectures.]
 
 ### The Problem statement
-[What problem are you solving?]
+[Deaf students in classrooms face multiple challenges:
+They miss tone and emphasis in lectures
+They don’t know which parts are important for exams
+Transcripts are unstructured and hard to revise
+Asking doubts in real-time is difficult
+Existing tools only provide speech-to-text — not learning intelligence.]
 
 ### The Solution
-[How are you solving it?]
+[We built an AI-powered classroom companion that:
+Converts speech to text in real-time
+Detects important academic cues (exam, definition, remember)
+Identifies interaction moments ("any doubts?")
+Generates structured summaries
+Allows students to submit doubts digitally to teachers
+Stores lecture sessions for revision
+Our system transforms transcription into structured academic insight.]
 
 ---
 
 ## Technical Details
-
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
-
+Languages Used:
+JavaScript
+HTML
+CSS
+Frameworks Used:
+Node.js
+Express.js
+Libraries Used:
+mysql2
+cors
+body-parser
+APIs Used:
+Web Speech API (for speech recognition)
+Database:
+MySQL
+Tools Used:
+VS Code
+Git
+GitHub
+MySQL Workbench
 **For Hardware:**
 - Main components: [List main components]
 - Specifications: [Technical specifications]
@@ -44,14 +73,28 @@
 ---
 
 ## Features
-
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
-
----
+Feature 1: Real-Time Speech-to-Text
+Captures teacher’s voice and converts it to live transcript.
+Feature 2: Smart Highlight Engine
+Automatically highlights:
+“important”
+“exam”
+“definition”
+“remember”
+Feature 3: Interaction Moment Detection
+Detects phrases like:
+“Any doubts?”
+“Is that clear?”
+Highlights them in green.
+Feature 4: AI Summary Generator
+Generates short lecture summary for quick revision.
+Feature 5: Doubt Submission System
+Students can type and submit doubts digitally.
+Feature 6: Session Storage
+Saves transcript and summary into MySQL database.
+Feature 7: Download Notes
+Download lecture transcript and summary as text file.
 
 ## Implementation
 
@@ -59,12 +102,12 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+[npm install]
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+[node server.js]
 ```
 
 ### For Hardware:
@@ -83,25 +126,55 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![<img width="1886" height="906" alt="image" src="https://github.com/user-attachments/assets/6e29e6ea-31b4-43db-b7c9-9a815a79a9ad" />
+]
+*Student view page*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![<img width="1898" height="912" alt="image" src="https://github.com/user-attachments/assets/404ef2be-0c72-4b2c-a2cb-6c6289b132fc" />
+]
+*student learning part , running part*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![<img width="979" height="617" alt="image" src="https://github.com/user-attachments/assets/f85306a2-47e5-48aa-a5b4-cbb5b5d959db" />
+ , <img width="644" height="192" alt="image" src="https://github.com/user-attachments/assets/972051fa-8b4a-49cd-8710-f6f3dad711d7" />
+](Add screenshot 3 here with proper name)
+*Teacher getting students doubt*
 
 #### Diagrams
 
 **System Architecture:**
 
-![Architecture Diagram](docs/architecture.png)
+![Architecture Flow
+
+Microphone
+↓
+Web Speech API (Speech Recognition ML Model)
+↓
+Frontend NLP Layer (Highlight + Interaction Detection)
+↓
+Backend (Node.js + Express)
+↓
+MySQL Database
+↓
+Teacher Dashboard](docs/architecture.png)
 *Explain your system architecture - components, data flow, tech stack interaction*
 
 **Application Workflow:**
 
-![Workflow](docs/workflow.png)
+![Teacher speaks
+
+Speech converted to text
+
+Important phrases highlighted
+
+Interaction moments detected
+
+Student views structured transcript
+
+Summary generated
+
+Doubts submitted
+
+Data stored in database](docs/workflow.png)
 *Add caption explaining your workflow*
 
 ---
@@ -137,41 +210,74 @@ List the key features of your project:
 
 #### API Documentation
 
-**Base URL:** `https://api.yourproject.com`
+**Base URL:** `http://localhost:5000/`
 
 ##### Endpoints
 
 **GET /api/endpoint**
-- **Description:** [What it does]
+**GET/get-doubts
+- **Description:** [Retrieves all submitted doubts]
 - **Parameters:**
-  - `param1` (string): [Description]
-  - `param2` (integer): [Description]
+  
 - **Response:**
 ```json
+[
 {
-  "status": "success",
-  "data": {}
+  "id":1,
+  "doubt":"Example doubt",
+  "created_at":"timestamp" 
 }
+]
 ```
 
 **POST /api/endpoint**
-- **Description:** [What it does]
+**POST/generate-summary
+- **Description:** [Generates summary from transcript]
 - **Request Body:**
 ```json
 {
-  "field1": "value1",
-  "field2": "value2"
+  
+  "text":"lecture transcript"
 }
+
 ```
 - **Response:**
-```json
+
 {
-  "status": "success",
-  "message": "Operation completed"
+  "summary":"Generated summary text"
 }
 ```
 
-[Add more endpoints as needed...]
+**POST/save-session
+- **Description:** [Saves lecture session]
+- **Request Body:**
+```json
+{
+  
+  "title": "Lecture Title",
+  "transcript": "Full transcript",
+  "summary": "Summary text"
+}
+
+```
+- **Response:**
+
+Session Saved Successfully
+```
+
+**POST/submit-doubt
+- **Description:** [Submits student doubt]
+- **Request Body:**
+```json
+{
+  
+  "doubt":"Student doubt text"
+}
+
+```
+- **Response:**
+
+```
 
 ---
 
@@ -361,9 +467,8 @@ python script.py -v --format json data.json
 ## Project Demo
 
 ### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
+[https://drive.google.com/file/d/1xQOn3i-S7Hb6vIagJq0sTFaI784ya4lD/view?usp=drive_link]
 
-*Explain what the video demonstrates - key features, user flow, technical highlights*
 
 ### Additional Demos
 [Add any extra demo materials/links - Live site, APK download, online demo, etc.]
